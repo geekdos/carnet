@@ -13,10 +13,12 @@
                 <th>Adresse</th>
                 <th>Phone</th>
                 <th>Site Web</th>
+                <th>Status</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
+        {% set i = 0 %}
         {% for contact in contacts %}
             <tr>
                 <td><a href="{{ path('contact_show', { 'id': contact.id }) }}">{{ contact.fisrtName }}</a></td>
@@ -24,6 +26,16 @@
                 <td>{{ contact.email }}</td>
                 <td>{{ contact.adress }}</td>
                 <td>{{ contact.phone }}</td>
+                {% for user in users %}
+                    {% if contact.email == user.email %}
+                        <td><span class="label label-success">Member</span></td>
+                    {% else %}
+                        <td>
+                            <span class="label label-danger">Ce n'est pas un memeber</span>
+                            <a href="#"><span class="label label-success">Invite</span></a>
+                        </td>
+                    {% endif %}
+                {% endfor %}
                 <td>{{ contact.website }}</td>
                 <td>
                     <a href="{{ path('contact_show', { 'id': contact.id }) }}" class="btn btn-success">Aficher</a>

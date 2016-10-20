@@ -21,9 +21,13 @@ class ContactController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $contacts = $em->getRepository('CarnetBundle:Contact')->findAll();
+        $users = $em->getRepository('CarnetBundle:User')->findAll();
+
+        //var_dump($users);die();
 
         return $this->render('contact/index.html.twig', array(
             'contacts' => $contacts,
+            'users' => $users
         ));
     }
 
@@ -120,5 +124,9 @@ class ContactController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+
+    private function isMemeber(){
+
     }
 }
