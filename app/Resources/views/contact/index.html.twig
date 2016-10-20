@@ -7,38 +7,28 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Fisrtname</th>
-                <th>Lastename</th>
+                <th>Nom</th>
+                <th>Prénom</th>
                 <th>Email</th>
-                <th>Adress</th>
+                <th>Adresse</th>
                 <th>Phone</th>
-                <th>Website</th>
+                <th>Site Web</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for contact in contacts %}
             <tr>
-                <td><a href="{{ path('contact_show', { 'id': contact.id }) }}">{{ contact.id }}</a></td>
-                <td>{{ contact.fisrtName }}</td>
+                <td><a href="{{ path('contact_show', { 'id': contact.id }) }}">{{ contact.fisrtName }}</a></td>
                 <td>{{ contact.lasteName }}</td>
                 <td>{{ contact.email }}</td>
                 <td>{{ contact.adress }}</td>
                 <td>{{ contact.phone }}</td>
                 <td>{{ contact.website }}</td>
                 <td>
-                    <ul class="list-group">
-                        <li  class="list-group-item">
-                            <a href="{{ path('contact_show', { 'id': contact.id }) }}" class="btn btn-success">Aficher</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="{{ path('contact_edit', { 'id': contact.id }) }}" class="btn btn-primary">Modifier</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="{{ path('contact_delete', { 'id': contact.id }) }}" class="btn btn-danger">Supprimer</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('contact_show', { 'id': contact.id }) }}" class="btn btn-success">Aficher</a>
+                    <a href="{{ path('contact_edit', { 'id': contact.id }) }}" class="btn btn-primary">Modifier</a>
+                    <a href="{{ path('contact_delete', { 'id': contact.id }) }}" class="btn btn-danger">Supprimer</a>
                 </td>
             </tr>
         {% endfor %}
