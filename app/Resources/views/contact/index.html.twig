@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+{% block title %}Liste des contacts{% endblock %}
 
 {% block body %}
     <h1>La liste des Contacts</h1>
@@ -41,7 +42,7 @@
                 <td>
                     <a href="{{ path('contact_show', { 'id': contact.id }) }}" class="btn btn-success">Aficher</a>
                     <a href="{{ path('contact_edit', { 'id': contact.id }) }}" class="btn btn-primary">Modifier</a>
-                    <a href="{{ path('contact_delete', { 'id': contact.id }) }}" class="btn btn-danger">Supprimer</a>
+                    <a href="{{ path('contact_show', { 'id': contact.id }) }}" class="btn btn-danger">Supprimer</a>
                 </td>
             </tr>
         {% endfor %}

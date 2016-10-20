@@ -14,12 +14,10 @@ class ContactController extends Controller
 {
     /**
      * Lists all contact entities.
-     *
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
         $contacts = $em->getRepository('CarnetBundle:Contact')->findAll();
         $users = $em->getRepository('CarnetBundle:User')->findAll();
 
@@ -27,7 +25,7 @@ class ContactController extends Controller
 
         return $this->render('contact/index.html.twig', array(
             'contacts' => $contacts,
-            'users' => $users
+            'users' => $users,
         ));
     }
 

@@ -4,6 +4,7 @@ namespace CarnetBundle\Entity;
 
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -23,4 +24,22 @@ class User extends BaseUser
         parent::__construct();
         // your own logic
     }
+
+    /**
+     * @ORM\OneToOne(targetEntity="Invitation")
+     * @ORM\JoinColumn(referencedColumnName="code")
+     * @Assert\NotNull(message="Your invitation is wrong", groups={"Registration"})
+     */
+    protected $invitation;
+
+    public function setInvitation(Invitation $invitation)
+    {
+        $this->invitation = $invitation;
+    }
+
+    public function getInvitation()
+    {
+        return $this->invitation;
+    }
+
 }
