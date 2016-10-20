@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Contacts list</h1>
+    <h1>La liste des Contacts</h1>
 
-    <table>
+    <a href="{{ path('contact_new') }}" class="btn btn-success btn-block">Ajouter un nouveaux contact</a>
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Id</th>
@@ -27,12 +28,15 @@
                 <td>{{ contact.phone }}</td>
                 <td>{{ contact.website }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('contact_show', { 'id': contact.id }) }}">show</a>
+                    <ul class="list-group">
+                        <li  class="list-group-item">
+                            <a href="{{ path('contact_show', { 'id': contact.id }) }}" class="btn btn-success">Aficher</a>
                         </li>
-                        <li>
-                            <a href="{{ path('contact_edit', { 'id': contact.id }) }}">edit</a>
+                        <li class="list-group-item">
+                            <a href="{{ path('contact_edit', { 'id': contact.id }) }}" class="btn btn-primary">Modifier</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="{{ path('contact_delete', { 'id': contact.id }) }}" class="btn btn-danger">Supprimer</a>
                         </li>
                     </ul>
                 </td>
@@ -40,10 +44,4 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('contact_new') }}">Create a new contact</a>
-        </li>
-    </ul>
 {% endblock %}
