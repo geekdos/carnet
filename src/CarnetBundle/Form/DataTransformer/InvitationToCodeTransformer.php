@@ -56,7 +56,7 @@ DQL;
 
         return $this->entityManager
             ->createQuery($dql)
-            ->setParameter('code', $code)
+            ->setParameter('code', $value)
             ->setMaxResults(1)
             ->getOneOrNullResult();
     }
