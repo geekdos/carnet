@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Le contact: {{ contact.lasteName }} {{ contact.fisrtName }}</h1>
+    <h1>  {{ contact.lasteName }} {{ contact.fisrtName }}</h1>
         <div class="col-md-3">
             <table class="table table-bordered">
                 <tbody>
                 <tr>
                     <td>
-                        <a href="{{ path('contact_index') }}" class="btn btn-success btn-block">Mes contacts</a></td>
+                        <a href="{{ path('contact_index') }}" class="btn btn-success btn-block">Retour</a></td>
                     <td>
                         <a href="{{ path('contact_edit', { 'id': contact.id }) }}" class="btn btn-warning btn-block">Modifier</a>
                     </td>

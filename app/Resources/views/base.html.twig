@@ -29,7 +29,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ path('carnet_homepage') }}">Carnet d'adresse</a>
+            <a class="navbar-brand" href="{{ path('carnet_homepage') }}">Carnet d'Adresses</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -37,7 +37,7 @@
                 <li>
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                         {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-                        <a href="{{ path('fos_user_security_logout') }}">
+                        <a style="margin-top:-10%" href="{{ path('fos_user_security_logout') }}">
                             {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
                         </a>
                     {% else %}
