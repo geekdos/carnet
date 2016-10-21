@@ -4,14 +4,17 @@ namespace CarnetBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 /**
  * Contact
  *
  * @ORM\Table(name="contact")
  * @ORM\Entity(repositoryClass="CarnetBundle\Repository\ContactRepository")
+ * @UniqueEntity(fields="email", message="email existant.")
  */
 class Contact
 {
+
     /**
      * @var int
      *
@@ -38,7 +41,7 @@ class Contact
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255)
+     * @ORM\Column(name="email", type="string", length=255,unique=true)
      * @Assert\Email(
      *     message = "The email '{{ value }}' is not a valid email.",
      *     checkMX = true
@@ -221,5 +224,27 @@ class Contact
     {
         return $this->website;
     }
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="CarnetBundle\Entity\User")
+     *
+     */
+
+    protected $user;
+
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    public function setUser(User $user)
+    {
+        $this->user = $user;
+    }
+
+
 }
+
+
 
