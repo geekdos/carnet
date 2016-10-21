@@ -57,6 +57,42 @@ hr {
     padding: 0;
 }
 
+.createform input{
+
+    width:100%;
+    border-radius: 1px;
+}
+.createform textarea{
+
+    width:100%;
+    border-radius: 1px;
+}
+
+
+.createform {
+    background: -webkit-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+    background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+    background: linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+    margin: auto;
+    position: relative;
+    height:30%;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 24px;
+    font-weight: bold;
+    width:100%;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px;
+
+    border: 1px solid #999;
+    border: inset 1px solid #333;
+    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
 /*
  * Remove the gap between audio, canvas, iframes,
  * images, videos and the bottom of their containers:
@@ -380,4 +416,88 @@ textarea {
 .container-login button:focus {
     background: #de2f18;
     border-color: #be2815;
+}
+
+
+/* -------------------------------------- */
+
+
+
+
+.module{
+    position:relative;
+    top:15%;
+    height:70%;
+    width:450px;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius:5px;
+    background:RGBA(255,255,255,1);
+
+    -webkit-box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);
+    box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);
+
+}
+
+.module ul{
+    list-style-type:none;
+    margin:0;
+}
+
+
+
+
+
+.registerform{
+    float:left;
+    height:86%;
+    width:100%;
+    box-sizing:border-box;
+    padding:40px;
+    background:white;
+}
+
+.registerform input{
+    height:50px;
+    width:100%;
+    border-radius:3px;
+    border:rgba(0,0,0,.3) 2px solid;
+    box-sizing:border-box;
+    padding:10px;
+    margin-bottom:30px;
+}
+
+.registerform input:focus{
+    outline:none;
+    border:rgba(24,149,215,1) 2px solid;
+    color:rgba(24,149,215,1);
+}
+
+.button{
+    height:50px;
+    width:100%;
+    border-radius:3px;
+    border:rgba(0,0,0,.3) 0px solid;
+    box-sizing:border-box;
+    padding:10px;
+    margin-bottom:30px;
+    background:#90c843;
+    color:#FFF;
+    font-weight:bold;
+    font-size: 12pt;
+    transition:background .4s;
+    cursor:pointer;
+    background-color: #ea533f;
+    border-color: #e73e28;
+    color: #ffffff;
+    border-radius: 0;
+    font-size: 18px;
+    line-height: 1.33;
+    padding: 10px 16px;
+    width: 100%;
+}
+
+.button:hover{
+    background:#80b438;
+
 }

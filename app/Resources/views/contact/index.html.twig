@@ -22,8 +22,8 @@
         {% set i = 0 %}
         {% for contact in contacts %}
             <tr>
-                <td><a href="{{ path('contact_show', { 'id': contact.id }) }}">{{ contact.fisrtName }}</a></td>
                 <td>{{ contact.lasteName }}</td>
+                <td>{{ contact.fisrtName }}</td>
                 <td>{{ contact.email }}</td>
                 <td>{{ contact.adress }}</td>
                 <td>{{ contact.phone }}</td>
