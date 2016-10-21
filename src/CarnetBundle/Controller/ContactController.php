@@ -18,7 +18,10 @@ class ContactController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $contacts = $em->getRepository('CarnetBundle:Contact')->findAll();
+        //var_dump($this->getUser()->getId());die();
+        $contacts = $em->getRepository('CarnetBundle:Contact')
+            ->findBy(array('owner' => $this->getUser()));
+
         $users = $em->getRepository('CarnetBundle:User')->findAll();
 
         //var_dump($users);die();

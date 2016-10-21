@@ -54,7 +54,7 @@ class Contact
      * @ORM\Column(name="lasteName", type="string", length=255)
      */
     private $lasteName;
-    
+
 
     /**
      * @var string $email
