@@ -29,6 +29,7 @@ class ContactController extends Controller
         ));
     }
 
+    
     /**
      * Creates a new contact entity.
      *
@@ -41,6 +42,10 @@ class ContactController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+
+            $user = $this->getUser();
+            $contact->setOwner($user);
+
             $em->persist($contact);
             $em->flush($contact);
 

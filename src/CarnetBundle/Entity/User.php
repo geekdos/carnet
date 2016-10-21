@@ -31,5 +31,4 @@ class User extends BaseUser
      * @Assert\NotNull(message="Your invitation is wrong", groups={"Registration"})
      */
 
-
 }

@@ -24,6 +24,23 @@ class Contact
      */
     private $id;
 
+
+    /**
+     * @ORM\ManyToOne(targetEntity="CarnetBundle\Entity\User", cascade={"remove"})
+     * @ORM\JoinColumn(onDelete="CASCADE")
+     */
+    private $owner;
+
+    public function getOwner()
+    {
+        return $this->owner;
+    }
+
+    public function setOwner(User $owner)
+    {
+        $this->owner = $owner;
+    }
+
     /**
      * @var string
      *
@@ -223,24 +240,6 @@ class Contact
     public function getWebsite()
     {
         return $this->website;
-    }
-
-
-    /**
-     * @ORM\ManyToOne(targetEntity="CarnetBundle\Entity\User")
-     *
-     */
-
-    protected $user;
-
-    public function getUser()
-    {
-        return $this->user;
-    }
-
-    public function setUser(User $user)
-    {
-        $this->user = $user;
     }
 
 
