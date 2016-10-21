@@ -29,7 +29,7 @@ class ContactController extends Controller
         ));
     }
 
-    
+
     /**
      * Creates a new contact entity.
      *

@@ -54,17 +54,15 @@ class Contact
      * @ORM\Column(name="lasteName", type="string", length=255)
      */
     private $lasteName;
+    
 
     /**
-     * @var string
+     * @var string $email
      *
-     * @ORM\Column(name="email", type="string", length=255,unique=true)
-     * @Assert\Email(
-     *     message = "The email '{{ value }}' is not a valid email.",
-     *     checkMX = true
-     * )
+     * @ORM\Column(name="email", type="string", length=255, unique=true)
+     * @Assert\Email()
      */
-    private $email;
+    protected $email;
 
     /**
      * @var string
